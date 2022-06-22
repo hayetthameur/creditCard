@@ -1,24 +1,16 @@
-import React, { Component } from 'react'
-
-
-
+import React, { Component } from 'react';
+import logo from './assets/images/sim.png'
 class Card extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: 'FOULEN',
             number: '**** **** **** ****',
-            monthyear:'12/08',
-            // validthru:""
-           
-
-          
-           
+            monthyear:'12/08'  
         }
         this.nameChage = this.nameChage.bind(this);
         this.numberChange = this.numberChange.bind(this);
-        this.Change = this.Change.bind(this);   
-      
+        this.Change = this.Change.bind(this);    
     }
     //to change name
     nameChage(n)
@@ -74,7 +66,12 @@ class Card extends Component {
         return ( <div className="mycard">
                       <div className="card" >
                           <h3>Company Name</h3>
-                          <img src="http://pngtransparent.com/images/sim-card-png-347x231_715f7ac2.png"/>
+                          <img src={logo} alt="logo" 
+                            style={{
+                                width: '72px',
+                                height: '69px',
+                                }}
+                            />
 
 
                       <div className="number">{this.state.number}</div>
@@ -91,7 +88,7 @@ class Card extends Component {
                         <div className="formulaire">
                             
                                <input type="text"  maxLength="16" onChange ={this.numberChange} placeholder="**** **** **** ****"/>
-                               <input className="txt" type="text"  maxLength="20" onChange={this.nameChage} placeholder="tapez votre nom"/>
+    <input className="txt" type="text"  maxLength="20" onChange={this.nameChage} placeholder="tapez votre nom"/>
                           <input type="text"
                                 datatype="MM YY"
                                 placeholder="12 /08" 
